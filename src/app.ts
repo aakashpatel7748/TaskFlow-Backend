@@ -83,5 +83,5 @@ app.use((err: any, req: express.Request, res: express.Response, _next: express.N
     });
 });
 
-export { app }
+export default app;
 
