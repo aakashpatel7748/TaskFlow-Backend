@@ -63,14 +63,14 @@ import { ApiResponse } from "./utils/ApiResponse.js"
 // routes declaration
 app.use("/api/v1", router)
 
+app.get("/", (req, res) => {
+    res.send("Hello World! Server is live.");
+});
+
 // 404 Handler
 app.use((req, res) => {
     console.log(`⚠️ [404 Not Found] ${req.method} ${req.originalUrl}`);
     res.status(404).json(new ApiResponse(404, null, `Route not found: ${req.originalUrl}`));
-});
-
-app.get("/", (req, res) => {
-    res.send("Hello World! Server is live.");
 });
 
 // Global Error Handler
