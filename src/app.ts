@@ -69,6 +69,10 @@ app.use((req, res) => {
     res.status(404).json(new ApiResponse(404, null, `Route not found: ${req.originalUrl}`));
 });
 
+app.get("/", (req, res) => {
+    res.send("Hello World! Server is live.");
+});
+
 // Global Error Handler
 app.use((err: any, req: express.Request, res: express.Response, _next: express.NextFunction) => {
     const statusCode = err.statusCode || 500;
